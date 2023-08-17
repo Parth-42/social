@@ -7,7 +7,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="bg-gray-100 w-screen h-14 flex items-center justify-between px-10">
+    <div className="bg-gray-100 h-14 flex items-center justify-between px-10">
       <div>Social</div>
       <div className="relative w-80">
         <svg

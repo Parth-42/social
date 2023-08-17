@@ -1,5 +1,6 @@
 "use client";
 
+import Post from "@/components/post";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 import React from "react";
@@ -19,8 +20,9 @@ const Profile = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <div className="text-lg flex flex-col items-center font-bold pb-2">
-            Parth Puri
+          <div className="text-lg flex flex-col items-center pb-2">
+            <span className="font-bold">parthpuri</span>{" "}
+            <span className="text-sm text-gray-500">Parth Puri</span>
           </div>
           <div className="flex gap-4">
             <div className="text-sm text-gray-500">
@@ -41,6 +43,9 @@ const Profile = () => {
             nesciunt, repellendus eligendi?
           </div>
         </div>
+
+        <Post />
+        <div className="bg-gray-200 w-full h-96 rounded-md my-10"></div>
       </div>
     </div>
   );
