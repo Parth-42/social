@@ -44,7 +44,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <Post />
+        <Post inProfile={true} />
         <div className="bg-gray-200 w-full h-96 rounded-md my-10"></div>
       </div>
     </div>
