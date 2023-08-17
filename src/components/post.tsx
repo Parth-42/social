@@ -5,6 +5,14 @@ import Image from "next/image";
 import { BiUpvote, BiDownvote } from "react-icons/Bi";
 import { FaRegComment } from "react-icons/fa";
 import { SlOptions } from "react-icons/sl";
+import { AiFillEdit } from "react-icons/ai";
+import { RiDeleteBin6Line } from "react-icons/ri";
+
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 
@@ -78,7 +86,32 @@ const Post: React.FC<{ inProfile?: boolean }> = ({ inProfile }) => {
         {inProfile && (
           <div className="bg-gray-200  flex gap-2 rounded-full px-2 h-8 cursor-pointer">
             <div className="flex justify-center items-center">
-              <SlOptions />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <div>
+                    <SlOptions />
+                  </div>
+                </PopoverTrigger>
+                <PopoverContent className="flex flex-col gap-2 max-w-fit">
+                  <div className="flex gap-2 hover:bg-gray-100 pl-2 py-2 w-24 rounded-md cursor-pointer">
+                    <div className="flex justify-center items-center">
+                      <AiFillEdit className="text-orange-300" />
+                    </div>
+                    <div className="flex justify-center items-center text-sm ">
+                      Edit
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 hover:bg-gray-100 pl-2 py-2 w-24 rounded-md cursor-pointer">
+                    <div className="flex justify-center items-center">
+                      <RiDeleteBin6Line className="text-red-400" />
+                    </div>
+                    <div className="flex justify-center items-center text-sm ">
+                      Delete
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
             </div>
           </div>
         )}
