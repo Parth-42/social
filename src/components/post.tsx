@@ -18,7 +18,10 @@ import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 
 const Post: React.FC<{ inProfile?: boolean }> = ({ inProfile }) => {
   return (
-    <div className="bg-gray-100 rounded-md px-6 py-4 min-h-10 min-w-10 max-w-xl">
+    <div
+      className="bg-white drop-shadow-md rounded-md px-6 py-4 min-h-10 min-w-[20rem] max-w-[40rem] md: w-full"
+      // style={{ width: "calc(50% - 1.5rem)" }}
+    >
       {/* Poster Details */}
       {!inProfile && (
         <div className="flex gap-2">
@@ -63,7 +66,7 @@ const Post: React.FC<{ inProfile?: boolean }> = ({ inProfile }) => {
       {/* Actions -> Upvote/Downvote, Comment */}
       <div className="flex gap-2 mt-2 justify-between">
         <div className="flex gap-2">
-          <div className="bg-gray-200 flex gap-2 rounded-xl px-2 h-8">
+          <div className="bg-gray-50 hover:bg-gray-100 flex gap-2 rounded-xl px-2 h-8">
             <div className="flex justify-center items-center cursor-pointer ">
               <BiUpvote />
             </div>
@@ -73,7 +76,7 @@ const Post: React.FC<{ inProfile?: boolean }> = ({ inProfile }) => {
             </div>
           </div>
 
-          <div className="bg-gray-200 flex gap-2 rounded-xl px-2 h-8 cursor-pointer">
+          <div className="bg-gray-50 hover:bg-gray-100 flex gap-2 rounded-xl px-2 h-8 cursor-pointer">
             <div className="flex justify-center items-center  gap-2">
               <div className="flex justify-center items-center text-sm">
                 314
@@ -86,12 +89,12 @@ const Post: React.FC<{ inProfile?: boolean }> = ({ inProfile }) => {
         {inProfile && (
           <Popover>
             <PopoverTrigger asChild>
-              <div className="flex justify-center items-center bg-gray-200 gap-2 rounded-full px-2 h-8 cursor-pointer">
+              <div className="flex justify-center items-center bg-gray-50 hover:bg-gray-100 gap-2 rounded-full px-2 h-8 cursor-pointer">
                 <SlOptions />
               </div>
             </PopoverTrigger>
-            <PopoverContent className="flex flex-col gap-2 max-w-fit">
-              <div className="flex gap-2 hover:bg-gray-100 pl-2 py-2 w-24 rounded-md cursor-pointer">
+            <PopoverContent className="flex flex-col gap-2 max-w-fit max-h-fit">
+              <div className="flex gap-2 hover:bg-gray-100 pl-2 py-1 w-24 rounded-md cursor-pointer">
                 <div className="flex justify-center items-center">
                   <AiFillEdit className="text-orange-300" />
                 </div>
@@ -100,7 +103,7 @@ const Post: React.FC<{ inProfile?: boolean }> = ({ inProfile }) => {
                 </div>
               </div>
 
-              <div className="flex gap-2 hover:bg-gray-100 pl-2 py-2 w-24 rounded-md cursor-pointer">
+              <div className="flex gap-2 hover:bg-gray-100 pl-2 py-1 w-24 rounded-md cursor-pointer">
                 <div className="flex justify-center items-center">
                   <RiDeleteBin6Line className="text-red-400" />
                 </div>

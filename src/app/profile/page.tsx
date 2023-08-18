@@ -4,6 +4,7 @@ import Post from "@/components/post";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 import React from "react";
+import { Separator } from "@/components/ui/separator";
 
 const Profile = () => {
   return (
@@ -44,8 +45,23 @@ const Profile = () => {
           </div>
         </div>
 
-        <Post inProfile={true} />
-        <div className="bg-gray-200 w-full h-96 rounded-md my-10"></div>
+        <div className="flex justify-center">
+          <Separator className="mt-10" />
+        </div>
+
+        <div
+          className="grid gap-6 py-10 px-10 rounded-sm w-full max-w-2/3 "
+          style={{
+            gridTemplateColumns: "repeat(auto-fill, minmax(20rem, 1fr))",
+          }}
+        >
+          <Post inProfile={true} />
+          <Post inProfile={true} />
+          <Post inProfile={true} />
+          <Post inProfile={true} />
+          <Post inProfile={true} />
+          <Post inProfile={true} />
+        </div>
       </div>
     </div>
   );
