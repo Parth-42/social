@@ -18,10 +18,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@radix-ui/react-avatar";
 
 const Post: React.FC<{ inProfile?: boolean }> = ({ inProfile }) => {
   return (
-    <div
-      className="bg-white drop-shadow-md rounded-md px-6 py-4 min-h-10 min-w-[20rem] max-w-[40rem] md: w-full"
-      // style={{ width: "calc(50% - 1.5rem)" }}
-    >
+    <div className="bg-white drop-shadow-md rounded-md px-6 py-4 min-h-10 min-w-[20rem] max-w-[40rem] md: w-full">
       {/* Poster Details */}
       {!inProfile && (
         <div className="flex gap-2">

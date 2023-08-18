@@ -2,13 +2,14 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 import React from "react";
 
 const Navbar = () => {
   return (
     <div className="bg-gray-100 h-14 flex items-center justify-between px-10">
-      <div>Social</div>
+      <Link href="/">Social</Link>
       <div className="relative w-80">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -30,10 +31,12 @@ const Navbar = () => {
           className="pl-12 pr-4 rounded-max bg-white"
         />
       </div>
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
-        <AvatarFallback>CN</AvatarFallback>
-      </Avatar>
+      <Link href="/profile">
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </Link>
     </div>
   );
 };
